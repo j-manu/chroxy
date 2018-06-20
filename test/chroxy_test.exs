@@ -18,8 +18,7 @@ defmodule ChroxyTest do
     page = try do
       establish_connection()
     rescue
-      IO.puts "MATCH ERROR"
-      e in MatchError -> establish_connection()
+      _e in MatchError -> IO.puts "MATCH ERROR";establish_connection()
     end
 
     url = "https://github.com/holsee"
