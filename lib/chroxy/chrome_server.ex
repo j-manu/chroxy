@@ -182,6 +182,7 @@ defmodule Chroxy.ChromeServer do
   def handle_info(:launch, state = %{options: opts}) do
     value_flags = ~w(
         --remote-debugging-port=#{opts[:chrome_port]}
+        --user-data-dir=#{opts[:crash_dumps_dir]}/#{opts[:chrome_port]}
         --crash-dumps-dir=#{opts[:crash_dumps_dir]}
         --v=#{opts[:verbose_logging]}
       )
