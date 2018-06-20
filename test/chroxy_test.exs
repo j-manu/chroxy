@@ -3,6 +3,7 @@ defmodule ChroxyTest do
   doctest Chroxy
 
   def establish_connection do
+    IO.puts "****ESTABLISHING CONNECTION***"
     ws_url = Chroxy.connection()
     {:ok, page} = ChromeRemoteInterface.PageSession.start_link(ws_url)
     page
@@ -18,7 +19,7 @@ defmodule ChroxyTest do
     page = try do
       establish_connection()
     rescue
-      _e in MatchError -> IO.puts "MATCH ERROR";establish_connection()
+      _e in MatchError -> establish_connection()
     end
 
     url = "https://github.com/holsee"
