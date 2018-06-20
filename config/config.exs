@@ -32,7 +32,7 @@ config :logger,
 
 config :chroxy,
   chrome_remote_debug_port_from: envar.("CHROXY_CHROME_PORT_FROM") || "9222",
-  chrome_remote_debug_port_to: envar.("CHROXY_CHROME_PORT_TO") || "9223"
+  chrome_remote_debug_port_to: envar.("CHROXY_CHROME_PORT_TO") || "9222"
 
 config :chroxy, Chroxy.ProxyListener,
   host: envar.("CHROXY_PROXY_HOST") || "127.0.0.1",
@@ -47,4 +47,4 @@ config :chroxy, Chroxy.Endpoint,
 config :chroxy, Chroxy.ChromeServer,
   page_wait_ms: envar.("CHROXY_CHROME_SERVER_PAGE_WAIT_MS") || "200",
   crash_dumps_dir: envar.("CHROME_CHROME_SERVER_CRASH_DUMPS_DIR") || "/tmp",
-  verbose_logging: 1
+  verbose_logging: 0
