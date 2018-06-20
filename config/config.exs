@@ -47,4 +47,4 @@ config :chroxy, Chroxy.Endpoint,
 config :chroxy, Chroxy.ChromeServer,
   page_wait_ms: envar.("CHROXY_CHROME_SERVER_PAGE_WAIT_MS") || "200",
   crash_dumps_dir: envar.("CHROME_CHROME_SERVER_CRASH_DUMPS_DIR") || "/tmp",
-  verbose_logging: 0
+  verbose_logging: 1
